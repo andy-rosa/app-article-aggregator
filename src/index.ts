@@ -1,3 +1,3 @@
 import someFN from "./test";
 
-someFN();
+someFN(123);
