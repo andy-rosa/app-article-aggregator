@@ -8,9 +8,9 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 // for passing in lng and translations on init
 
 i18n
-  .use(Backend,)
-  .use(LanguageDetector,)
-  .use(initReactI18next,)
+  .use(Backend)
+  .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
     fallbackLng: 'ru',
     debug: __IS_DEF__,
@@ -18,6 +18,6 @@ i18n
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
-  },);
+  });
 
 export default i18n;

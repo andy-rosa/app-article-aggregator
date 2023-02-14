@@ -5,7 +5,7 @@ import { buildLoaders, } from './buildLoaders';
 import { buildResolvers, } from './buildResolvers';
 import { buildDevServer, } from './buildDevServer';
 
-export function buildWebpackConfig(options: BuildOptions,): webpack.Configuration {
+export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
   const { paths, mode, isDev, } = options;
 
   return {
@@ -16,12 +16,12 @@ export function buildWebpackConfig(options: BuildOptions,): webpack.Configuratio
       path: paths.build,
       clean: true,
     },
-    plugins: buildPlugins(options,),
+    plugins: buildPlugins(options),
     module: {
-      rules: buildLoaders(options,),
+      rules: buildLoaders(options),
     },
-    resolve: buildResolvers(options,),
+    resolve: buildResolvers(options),
     devtool: isDev ? 'inline-source-map' : undefined,
-    devServer: isDev ? buildDevServer(options,) : undefined,
+    devServer: isDev ? buildDevServer(options) : undefined,
   };
 }

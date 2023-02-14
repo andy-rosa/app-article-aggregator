@@ -9,11 +9,11 @@ interface SidebarProps {
     className?: string;
 }
 
-export const Sidebar: FC<SidebarProps> = (props,) => {
-  const [collapsed, setCollapsed,] = useState(false,);
+export const Sidebar: FC<SidebarProps> = (props) => {
+  const [collapsed, setCollapsed,] = useState(false);
 
   const onToggle = () => {
-    setCollapsed((prev,) => !prev,);
+    setCollapsed((prev) => !prev);
   };
 
   const {
@@ -23,7 +23,7 @@ export const Sidebar: FC<SidebarProps> = (props,) => {
 
   return (
     <aside
-      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed, }, [className,],)}
+      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed, }, [className,])}
     >
       {children}
       <Button onClick={onToggle}>TOGGLE</Button>
