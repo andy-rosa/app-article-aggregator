@@ -2,6 +2,10 @@
   "Перевод": "Translate",
   "Главная страница": "Main page",
   "Язык": "eng",
-  "Страница не найдена": "Page not found"
+  "Страница не найдена": "Page not found",
+  "Произошла непредвиденная ошибка": "An unexpected error has occurred",
+  "Обновить страницу": "Reload page",
+  "Навигация: Главная": "Main",
+  "Навигация: О нас" : "About"
 
 }

@@ -17,6 +17,8 @@ export function buildPlugins({ paths, isDev, }: BuildOptions): webpack.WebpackPl
     new webpack.DefinePlugin({
       __IS_DEF__: JSON.stringify(isDev),
     }),
-    isDev && new ReactRefreshWebpackPlugin(),
+    isDev && new ReactRefreshWebpackPlugin({
+      overlay: false,
+    }),
   ].filter(Boolean);
 }
