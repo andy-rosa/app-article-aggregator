@@ -5,7 +5,6 @@ import cls from './Navbar.module.scss';
 
 interface NavbarProps {
     className?: string;
-
 }
 
 export const Navbar = ({ className, }: NavbarProps) => {
@@ -16,7 +15,6 @@ export const Navbar = ({ className, }: NavbarProps) => {
         <AppLink to="/" theme={AppLinkTheme.SECONDARY} className={cls.mainLink}>
           {t('Навигация: Главная')}
         </AppLink>
-        {/* eslint-disable-next-line i18next/no-literal-string */}
         <AppLink to="/about" theme={AppLinkTheme.SECONDARY} className={cls.aboutLink}>
           {t('Навигация: О нас')}
         </AppLink>

@@ -53,6 +53,7 @@ module.exports = {
     ],
     'i18next/no-literal-string': [2, {
       markupOnly: true,
+      ignoreAttribute: ['to',],
     },
     ],
   },
