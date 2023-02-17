@@ -23,11 +23,17 @@ export const Sidebar: FC<SidebarProps> = (props) => {
 
   return (
     <aside
+      data-testid="sidebar"
       className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed, }, [className,])}
     >
       {children}
       {/* eslint-disable-next-line i18next/no-literal-string */}
-      <Button onClick={onToggle}>TOGGLE</Button>
+      <Button
+        data-testid="sidebar-toggle"
+        onClick={onToggle}
+      >
+        TOGGLE
+      </Button>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={cls.lang} />
