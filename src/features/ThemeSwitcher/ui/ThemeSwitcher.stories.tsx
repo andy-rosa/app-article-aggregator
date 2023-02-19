@@ -3,10 +3,10 @@ import { ComponentMeta, ComponentStory, } from '@storybook/react';
 
 import { ThemeDecorator, } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme, } from 'app/providers/ThemeProvider';
-import { ThemeSwitcher, } from 'widgets/ThemeSwitcher';
+import { ThemeSwitcher, } from 'features/ThemeSwitcher';
 
 export default {
-  title: 'widgets/ThemeSwitcher',
+  title: 'features/ThemeSwitcher',
   component: ThemeSwitcher,
   argTypes: {
     backgroundColor: { control: 'color', },
