@@ -19,6 +19,18 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: install modules
         run: npm install
+  build_prod:
+    needs: [ install_modules ]
+    runs-on: ubuntu-latest
+    strategy:
+        matrix:
+          node-version: [ 17.x ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
       - name: build production project
         run: npm run build:prod
   lint_ts:
@@ -28,6 +40,11 @@ jobs:
       matrix:
         node-version: [ 17.x ]
     steps:
+      - uses: actions/checkout@v2
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
       - name: linting typescript
         run: npm run lint:ts
   lint_css:
@@ -37,6 +54,11 @@ jobs:
       matrix:
         node-version: [ 17.x ]
     steps:
+      - uses: actions/checkout@v2
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
       - name: linting css
         run: npm run lint:scss
   unit_tests:
@@ -46,6 +68,11 @@ jobs:
       matrix:
         node-version: [ 17.x ]
     steps:
+      - uses: actions/checkout@v2
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
       - name: unit testing
         run: npm run test:unit
   screenshot_tests:
@@ -55,6 +82,11 @@ jobs:
       matrix:
         node-version: [ 17.x ]
     steps:
+      - uses: actions/checkout@v2
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
       - name: build storybook
         run: npm run storybook:build
       - name: screenshots testing
