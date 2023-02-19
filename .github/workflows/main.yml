@@ -1,4 +1,4 @@
-name: linting, testing, building
+name: checks
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main ]
 jobs:
-  pipeline:
+  install_modules:
     runs-on:  ubuntu-latest
     strategy:
       matrix:
@@ -19,14 +19,49 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: install modules
         run: npm install
+  build_prod:
+    needs: [ install_modules ]
+    runs-on: ubuntu-latest
+    strategy:
+        matrix:
+          node-version: [ 17.x ]
+    steps:
       - name: build production project
         run: npm run build:prod
+  lint_ts:
+    needs: [ install_modules ]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 17.x ]
+    steps:
       - name: linting typescript
         run: npm run lint:ts
+  lint_css:
+    needs: [ install_modules ]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 17.x ]
+    steps:
       - name: linting css
         run: npm run lint:scss
+  unit_tests:
+    needs: [ install_modules ]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 17.x ]
+    steps:
       - name: unit testing
         run: npm run test:unit
+  screenshot_tests:
+    needs: [ install_modules ]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 17.x ]
+    steps:
       - name: build storybook
         run: npm run storybook:build
       - name: screenshots testing
