@@ -38,6 +38,7 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'warn',
     'no-underscore-dangle': 'off',
+    'linebreak-style': 'off',
     'max-len': [2, {
       ignoreComments: true,
       code: 100,
