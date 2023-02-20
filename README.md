@@ -33,19 +33,27 @@
     │   │           └── config.ts   # Описание типов конфигурации
     │   ├── jest                # Папка конфигурации тестов
     │   └── storybook           
+    │  
+    │  
     ├── .loki                   # Папка скриншотных тестов
     ├── .github                 # CI pipeline
     ├── scripts                 # глобальные проектные скрипты
     │   └── generate-visual-json-report       # Настройка визуального отображение скриншотных тестов
+    │  
+    │  
     ├── publick                 
     │   ├── index.html          # шаблон
     │   └── locales             # локализация сайта
+    │  
+    │  
     ├── src                     # основные файлы FSD метадология
     │   ├── app
     │   ├── pages             
     │   ├── widgets           
     │   ├── features  
     │   └── shared
+    │  
+    │  
     ├── .eslintrc.js            # настройка eslint
     ├── .stylelintrc.json       # настройка stylelint
     ├── tsconfig.json           # настройка ts
